@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>❤️ 給最可愛的廖尹瑄 ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow:hidden;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:"Microsoft JhengHei",sans-serif;
+    background:linear-gradient(-45deg,#ff9ec4,#ff7eb3,#ff4d88,#ffbfd8);
+    background-size:400% 400%;
+    animation:bg 10s infinite alternate;
+}
+
+@keyframes bg{
+    0%{background-position:0% 50%;}
+    100%{background-position:100% 50%;}
+}
+
+.box{
+    width:80%;
+    max-width:900px;
+    padding:40px;
+    border-radius:30px;
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(12px);
+    border:2px solid rgba(255,255,255,.5);
+    text-align:center;
+    color:white;
+    box-shadow:0 0 30px rgba(255,255,255,.5);
+    animation:show 2s;
+}
+
+@keyframes show{
+    from{
+        transform:scale(.7);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+h1{
+    font-size:52px;
+    margin-bottom:30px;
+    text-shadow:0 0 20px pink;
+}
+
+p{
+    font-size:28px;
+    line-height:1.8;
+    text-shadow:0 0 10px white;
+}
+
+.sign{
+    margin-top:35px;
+    font-size:36px;
+    font-weight:bold;
+    animation:flash 1s infinite alternate;
+}
+
+@keyframes flash{
+    from{opacity:.5;}
+    to{
+        opacity:1;
+        text-shadow:0 0 25px white;
+    }
+}
+
+.heart{
+    position:absolute;
+    color:pink;
+    animation:float linear infinite;
+    user-select:none;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh) scale(.5);
+        opacity:0;
+    }
+    20%{
+        opacity:1;
+    }
+    to{
+        transform:translateY(-120vh) scale(1.5) rotate(360deg);
+        opacity:0;
+    }
+}
+
+.star{
+    position:absolute;
+    color:white;
+    animation:twinkle 2s infinite;
+    user-select:none;
+}
+
+@keyframes twinkle{
+    0%,100%{
+        opacity:.2;
+        transform:scale(.8);
+    }
+    50%{
+        opacity:1;
+        transform:scale(1.5);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+<h1>💖 最可愛的廖尹瑄 💖</h1>
+
+<p>
+我知道我有時很白癡<br><br>
+
+但也很謝謝妳跟我渡過了我們的第一個月<br><br>
+
+雖然有時不知道為什麼總感覺怪怪的<br><br>
+
+但我愛你 ❤️
+</p>
+
+<div class="sign">
+王耀勝 🐢 敬上
+</div>
+
+</div>
+
+<script>
+
+// 愛心
+function createHeart(){
+
+    const heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="❤️";
+
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=(20+Math.random()*40)+"px";
+    heart.style.animationDuration=(4+Math.random()*5)+"s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },9000);
+}
+
+setInterval(createHeart,180);
+
+// 星星
+function createStar(){
+
+    const star=document.createElement("div");
+    star.className="star";
+    star.innerHTML="✨";
+
+    star.style.left=Math.random()*100+"vw";
+    star.style.top=Math.random()*100+"vh";
+    star.style.fontSize=(10+Math.random()*25)+"px";
+
+    document.body.appendChild(star);
+
+    setTimeout(()=>{
+        star.remove();
+    },3000);
+}
+
+setInterval(createStar,120);
+
+</script>
+
+</body>
+</html>
